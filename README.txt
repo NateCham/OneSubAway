@@ -1,0 +1,1 @@
+add the distance between two lat/lon pairs procedure to mysql (distance.sql)

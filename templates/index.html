@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>OneSubAway</title>
+
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='stylesheets/application.css') }}">
+</head>
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.1/backbone-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.marionette/2.4.2/backbone.marionette.min.js"></script>
+  
+
+  <div id="header">NYC - Nearest Stations</div>
+
+  <div id="stations-app">
+    <ul class="stations-list"></ul>
+  </div>
+
+  <script type="text/template" id="nearest-item-tmpl">
+<div id="station-info"><p>Station: <%= stop_id %> - <%= stop_name %> (<%- dist_miles.toFixed(2) %> miles away)</p></div>
+  </script>
+
+  <script type="text/template" id="train-item-tmpl">
+    Route <%= route_id %> : <%= trip_headsign %> comes in <%= (train_comes_sec / 60).toFixed(0) %> min 
+    <%= (direction_id === 1) ? 'South' : 'North' %>
+  </script>
+
+  <!-- application.js must be called after the script template, otherwise you'll get an error -->
+  <script type="text/javascript" src="static/application.js"></script>
+</body>
+</html>

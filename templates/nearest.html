@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>OneSubAway</title>
+</head>
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.1/backbone-min.js"></script>
+  
+
+  <div id="stations-app">
+    <ul class="stations-list"><ul>
+  </div>
+
+  <div id="nearest-app">
+    <ul class"nearest-list"><ul>
+  </div>
+
+  <script type="text/template" id="station-item-tmpl">
+    <p>id: <i><%= stop_id %></i> - arriving in <%= train_comes_min %>min on trip: <%= trip_id %></p>
+  </script>
+
+
+  <script type="text/template" id="nearest-item-tmpl">
+    <p><%= stop_id %> - <%= stop_name %> : <%= dist_miles %> miles away</p>
+  </script>
+
+  <!-- application.js must be called after the script template, otherwise you'll get an error -->
+  <script type="text/javascript" src="static/application.js"></script>
+</body>
+</html>
