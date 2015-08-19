@@ -19,7 +19,7 @@ pp = pprint.PrettyPrinter(indent=2)
 def read_csv():
     # use pandas to import csv to dataframe and export to mysql table
     for c in csv_file_names:
-        df = pandas.read_csv(c + '.txt')
+        df = pandas.read_csv('mta_info_files/' + c + '.txt')
         df.to_sql(c, db_engine, if_exists='replace', chunksize=1000)
 
 
@@ -100,5 +100,4 @@ def read_realtime():
             db.commit()
         db.close()
         
-#read_csv()
-read_realtime()
+read_csv()
