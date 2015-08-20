@@ -52,5 +52,5 @@ def get_nearest_stops():
     return jsonify({'query': sql, 'nearest': [s for s in ret]})
 
 if __name__ == '__main__':
-    app.debug = True
+    #app.debug = True
     app.run(host='0.0.0.0')

@@ -28,8 +28,8 @@ StationModel = Backbone.Model.extend({});
 StationsCollection = Backbone.Collection.extend({
   model: StationModel,
   url: function() {
-    //return '/nearest?latitude=' + this.lat + '&longitude=' + this.lon;
-    return '/nearest?latitude=' + '40.869444' + '&longitude=' + '-73.915279';
+    return '/nearest?latitude=' + this.lat + '&longitude=' + this.lon;
+    //return '/nearest?latitude=' + '40.869444' + '&longitude=' + '-73.915279';
   },
   parse: function(data) { return data.nearest; },
   initialize: function() {
