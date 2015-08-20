@@ -5,9 +5,12 @@ Prereqs:
 - Backbone, Underscore, JQuery (referenced from CDN)
 - MySQL
 - Pandas (pip install pandas)
+- protobuf (pip install protobuf)
+- Python GTFS-realtime Language Bindings (pip install gtfs-realtime-bindings)
+- SQLAlchemy (pip install sqlalchemy)
 
 
 Steps:
-- Init the MySQL Database: $ mysql -uroot < sqlfiles/
-add the distance between two lat/lon pairs procedure to mysql (distance.sql)
+- Init the MySQL Database: $ mysql -uroot < sqlfiles/create_tables.sql
+- Add the helper function and procedure: $ mysql -uroot < sqlfiles/helper_functions.sql
 

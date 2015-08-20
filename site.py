@@ -9,6 +9,7 @@ app = Flask(__name__)
 @app.route('/', methods=['GET'])
 @app.route('/', defaults={'path': ''})
 def root(*args, **kwargs):
+    import_csv.read_realtime()
     '''render and init backbone page'''
     return render_template('index.html')
 
